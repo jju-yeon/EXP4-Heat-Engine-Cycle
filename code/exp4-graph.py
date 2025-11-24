@@ -13,8 +13,8 @@ font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
 
 #실험 이름 설정
-expName = "EXP4-1"
-expTheme = "사이클1"
+expName = "EXP4-3"
+expTheme = "사이클3"
 
 #상수 설정
 chamber_radius = 0.02
@@ -51,7 +51,7 @@ T_low = T[f"Cold Temperature (2) (°C) {expTheme}"].to_numpy()
 #단위 변환
 P *= 1E3
 x = Angle * sensor_radius
-V = (x + startHeight) * np.pi * chamber_radius**2
+V = (x + startHeight) * np.pi * cylinder_radius**2
 T_high += 273.15
 T_low += 273.15
 
@@ -94,9 +94,9 @@ Q_H = Q_BC + Q_CD
 eff = W/Q_H * 100
 
 print(f"열효율: {eff:.6f}%")
-
+print("카르노 효율 비: %f%%"%((eff/eff_theory)*100))
 #질량체가 받은 일
-delta_H = (V_right[np.argmax(P_right)]-V[np.argmin(V)])/(np.pi*cylinder_radius**2)
+delta_H = V_right[np.argmax(P_right)]/(np.pi*cylinder_radius**2) - startHeight
 W_weight = m_weight * g * delta_H
 print(f"질량체가 받은 일: {W_weight:.6f}J")
 
