@@ -1,5 +1,5 @@
-# EXP2-Ideal-Gas-Laws
-EXP2: Ideal Gas Laws – Code for Paper 
+# EXP4-Heat-Engine-Cycle
+EXP2: Heat Engine Cycle – Code for Paper 
 
 This repository contains the analysis code used in the manuscript. 
 All scripts correspond to the exact version used during data processing for the results in the paper.
